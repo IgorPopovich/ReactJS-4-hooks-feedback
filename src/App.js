@@ -12,13 +12,13 @@ function App() {
 
   const addFeedback = option => {
     switch (option) {
-      case 'good':
+      case 'Good':
         setGood(prevGood => prevGood + 1);
         break;
-      case 'neutral':
+      case 'Neutral':
         setNeutral(prevNeutral => prevNeutral + 1);
         break;
-      case 'bad':
+      case 'Bad':
         setBad(prevBad => prevBad + 1);
         break;
       default:
