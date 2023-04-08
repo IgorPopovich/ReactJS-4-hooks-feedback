@@ -1,24 +1,24 @@
-import React from 'react';
-import css from './Statistics.module.css';
 import PropTypes from 'prop-types';
+import css from './Statistics.module.css';
 
-const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
-
-    return  <div className={css.result}>
-                <span className={css.value}>Good: {good}</span>
-                <span className={css.value}>Neutral: {neutral}</span>
-                <span className={css.value}>Bad: {bad}</span>
-                <span className={css.value}>Total: {total}</span>
-                <span className={css.value}>Positive feedback: {positivePercentage}%</span>
-            </div>
+function Statistics({ good, neutral, bad, total, positivePercentage }) {
+  return (
+    <ul className={css.list}>
+      <li className={css.item}>Good: {good}</li>
+      <li className={css.item}>Neutral: {neutral}</li>
+      <li className={css.item}>Bad: {bad}</li>
+      <li className={css.item}>Total: {total}</li>
+      <li className={css.item}>Positive feedback: {positivePercentage}%</li>
+    </ul>
+  );
 }
 
-Notification.propTypes = {
-    good: PropTypes.number,
-    neutral: PropTypes.number,
-    bad: PropTypes.number,
-    total: PropTypes.number,
-    positivePercentage: PropTypes.number,
-  }; 
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};
 
 export default Statistics;
